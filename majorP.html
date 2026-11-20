@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PlayIndex</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f3fa;
+    color: #222222;
+    margin: 0;
+  }
+
+  header {
+    background-color: #2f35c4;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+  }
+  header h1 { margin: 0 0 10px 0; }
+  header p { margin: 0; }
+
+  nav {
+    background-color: #1f2390;
+    text-align: center;
+    padding: 12px;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+  }
+
+  main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  h2 {
+    color: #2f35c4;
+    border-bottom: 3px solid #f2b705;
+    padding-bottom: 6px;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 cards in every row */
+    gap: 20px;
+  }
+  .card {
+    background-color: white;
+    border: 1px solid #cccccc;
+    padding: 15px;
+  }
+  .card h3 { margin-top: 0; }
+
+  /* Cards are now links: keep normal text look, add a hover effect */
+  a.card {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  }
+  a.card:hover,
+  a.card:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    border-color: #2f35c4;
+  }
+  a.card:hover h3,
+  a.card:focus h3 {
+    color: #2f35c4;
+    text-decoration: underline;
+  }
+  .visit {
+    display: block;
+    margin-top: 10px;
+    color: #2f35c4;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .tag {
+    color: white;
+    padding: 3px 10px;
+    font-size: 13px;
+    font-weight: bold;
+  }
+  .sandbox   { background-color: #17784a; }
+  .shooter   { background-color: #c0392b; }
+  .adventure { background-color: #7438c8; }
+  .moba      { background-color: #0b6a9e; }
+  .sports    { background-color: #a85a00; }
+  .casual    { background-color: #b0286b; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+  }
+  th {
+    background-color: #2f35c4;
+    color: white;
+    text-align: left;
+    padding: 10px;
+  }
+  td {
+    border-bottom: 1px solid #cccccc;
+    padding: 10px;
+  }
+
+  footer {
+    background-color: #2f35c4;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+  }
+</style>
+</head>
+
+<body>
+
+  <header>
+    <h1>GameVerse</h1>
+    <p>Top and best 30 online multiplayer video games</p>
+  </header>
+
+  <nav>
+    <a href="#games">Games</a>
+    <a href="#compare">Compare</a>
+    <a href="#tips">Before you play</a>
+  </nav>
+
+  <main>
+
+    <!-- Each card is now an <a> link. Change the href to point somewhere else. -->
+    <h2 id="games">Popular Games</h2>
+    <div class="cards">
+
+      <a class="card" href="https://www.minecraft.net" target="_blank" rel="noopener">
+        <h3>Minecraft</h3>
+        <span class="tag sandbox">Sandbox</span>
+        <p>Build, mine and survive in a world made of blocks. You can play freely and create anything, or play in survival mode.</p>
+        <p><b>Released:</b> 2011<br><b>Platform:</b> PC, console, mobile<br><b>Cost:</b> Paid<br><b>Age rating:</b> Everyone 10+</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://www.roblox.com" target="_blank" rel="noopener">
+        <h3>Roblox</h3>
+        <span class="tag sandbox">Sandbox</span>
+        <p>A platform where players make their own games and share them. You can join millions of games made by other users.</p>
+        <p><b>Released:</b> 2006<br><b>Platform:</b> PC, console, mobile<br><b>Cost:</b> Free<br><b>Age rating:</b> Everyone 10+</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://www.fortnite.com" target="_blank" rel="noopener">
+        <h3>Fortnite</h3>
+        <span class="tag shooter">Battle royale</span>
+        <p>Up to 100 players land on an island and fight until only one person or team is left. Players can also build walls and ramps.</p>
+        <p><b>Released:</b> 2017<br><b>Platform:</b> PC, console<br><b>Cost:</b> Free<br><b>Age rating:</b> Teen</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://www.rockstargames.com/gta-v" target="_blank" rel="noopener">
+        <h3>Grand Theft Auto V</h3>
+        <span class="tag adventure">Action</span>
+        <p>An open-world crime game with three playable characters. After the story, you can play online with other people.</p>
+        <p><b>Released:</b> 2013<br><b>Platform:</b> PC, console<br><b>Cost:</b> Paid<br><b>Age rating:</b> Mature 17+</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://www.counter-strike.net" target="_blank" rel="noopener">
+        <h3>Counter-Strike 2</h3>
+        <span class="tag shooter">Shooter</span>
+        <p>Two teams play short rounds. One team plants a bomb and the other tries to stop them. It is very popular in esports.</p>
+        <p><b>Released:</b> 2023<br><b>Platform:</b> PC<br><b>Cost:</b> Free<br><b>Age rating:</b> Mature 17+</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://playvalorant.com" target="_blank" rel="noopener">
+        <h3>Valorant</h3>
+        <span class="tag shooter">Shooter</span>
+        <p>A 5 versus 5 shooter where each character has special abilities. It needs good aim and teamwork.</p>
+        <p><b>Released:</b> 2020<br><b>Platform:</b> PC, console<br><b>Cost:</b> Free<br><b>Age rating:</b> Teen</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://www.leagueoflegends.com" target="_blank" rel="noopener">
+        <h3>League of Legends</h3>
+        <span class="tag moba">MOBA</span>
+        <p>Two teams of five choose characters called champions and try to destroy the enemy base. Planning and teamwork are important.</p>
+        <p><b>Released:</b> 2009<br><b>Platform:</b> PC<br><b>Cost:</b> Free<br><b>Age rating:</b> Teen</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://www.battlegroundsmobileindia.com" target="_blank" rel="noopener">
+        <h3>BGMI</h3>
+        <span class="tag shooter">Battle royale</span>
+        <p>Battlegrounds Mobile India is a mobile battle royale game made for India. Squads search for weapons and try to be the last team alive.</p>
+        <p><b>Released:</b> 2021 (India)<br><b>Platform:</b> Mobile<br><b>Cost:</b> Free<br><b>Age rating:</b> Teen</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://genshin.hoyoverse.com" target="_blank" rel="noopener">
+        <h3>Genshin Impact</h3>
+        <span class="tag adventure">Action RPG</span>
+        <p>An open-world adventure where you explore, solve puzzles and fight with a team of characters who use elemental powers.</p>
+        <p><b>Released:</b> 2020<br><b>Platform:</b> PC, console, mobile<br><b>Cost:</b> Free<br><b>Age rating:</b> Teen</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://en.bandainamcoent.eu/elden-ring/elden-ring" target="_blank" rel="noopener">
+        <h3>Elden Ring</h3>
+        <span class="tag adventure">Action RPG</span>
+        <p>A large fantasy world with tough boss fights. It is known for being difficult and for its beautiful world.</p>
+        <p><b>Released:</b> 2022<br><b>Platform:</b> PC, console<br><b>Cost:</b> Paid<br><b>Age rating:</b> Mature 17+</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://www.ea.com/games/apex-legends" target="_blank" rel="noopener">
+        <h3>Apex Legends</h3>
+        <span class="tag shooter">Battle royale</span>
+        <p>Squads of three choose a character with special skills and fight to be the last team standing. It is fast and focuses on teamwork.</p>
+        <p><b>Released:</b> 2019<br><b>Platform:</b> PC, console<br><b>Cost:</b> Free<br><b>Age rating:</b> Teen</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://www.callofduty.com/mobile" target="_blank" rel="noopener">
+        <h3>Call of Duty: Mobile</h3>
+        <span class="tag shooter">Shooter</span>
+        <p>A phone version of the Call of Duty series with team matches and a battle royale mode, using well-known maps and weapons.</p>
+        <p><b>Released:</b> 2019<br><b>Platform:</b> Mobile<br><b>Cost:</b> Free<br><b>Age rating:</b> Mature 17+</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://www.rocketleague.com" target="_blank" rel="noopener">
+        <h3>Rocket League</h3>
+        <span class="tag sports">Sports</span>
+        <p>Football played with rocket-powered cars. Two teams try to hit a giant ball into the goal. Easy to learn and hard to master.</p>
+        <p><b>Released:</b> 2015<br><b>Platform:</b> PC, console<br><b>Cost:</b> Free<br><b>Age rating:</b> Everyone</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://www.ea.com/games/ea-sports-fc" target="_blank" rel="noopener">
+        <h3>EA Sports FC</h3>
+        <span class="tag sports">Sports</span>
+        <p>The yearly football game, known as FIFA until 2023. Play with real teams and players in matches, seasons and online modes.</p>
+        <p><b>Released:</b> Every year<br><b>Platform:</b> PC, console, mobile<br><b>Cost:</b> Paid<br><b>Age rating:</b> Everyone</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://www.nintendo.com/us/store/products/mario-kart-8-deluxe-switch/" target="_blank" rel="noopener">
+        <h3>Mario Kart 8 Deluxe</h3>
+        <span class="tag sports">Racing</span>
+        <p>A fun kart racing game where players use items like shells and bananas to slow down rivals. Good for playing with family and friends.</p>
+        <p><b>Released:</b> 2017<br><b>Platform:</b> Nintendo Switch<br><b>Cost:</b> Paid<br><b>Age rating:</b> Everyone</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://www.innersloth.com/games/among-us/" target="_blank" rel="noopener">
+        <h3>Among Us</h3>
+        <span class="tag casual">Party game</span>
+        <p>Players work together on a spaceship while a few hidden impostors try to sabotage them. You talk and vote to find who is lying.</p>
+        <p><b>Released:</b> 2018<br><b>Platform:</b> PC, console, mobile<br><b>Cost:</b> Free on mobile, paid on PC<br><b>Age rating:</b> Everyone 10+</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://pokemongolive.com" target="_blank" rel="noopener">
+        <h3>Pok&eacute;mon GO</h3>
+        <span class="tag casual">Casual</span>
+        <p>Walk around in the real world to find and catch Pok&eacute;mon that appear on your phone screen. It encourages players to go outside.</p>
+        <p><b>Released:</b> 2016<br><b>Platform:</b> Mobile<br><b>Cost:</b> Free<br><b>Age rating:</b> Everyone</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://subwaysurfers.com" target="_blank" rel="noopener">
+        <h3>Subway Surfers</h3>
+        <span class="tag casual">Casual</span>
+        <p>An endless runner where you dodge trains and obstacles and collect coins. Simple to play with one hand, so it suits short breaks.</p>
+        <p><b>Released:</b> 2012<br><b>Platform:</b> Mobile<br><b>Cost:</b> Free<br><b>Age rating:</b> Everyone 10+</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://www.stardewvalley.net" target="_blank" rel="noopener">
+        <h3>Stardew Valley</h3>
+        <span class="tag sandbox">Simulation</span>
+        <p>You inherit a farm and rebuild it by growing crops, raising animals and making friends in town. Relaxed and made mostly by one developer.</p>
+        <p><b>Released:</b> 2016<br><b>Platform:</b> PC, console, mobile<br><b>Cost:</b> Paid<br><b>Age rating:</b> Everyone 10+</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://www.zelda.com/breath-of-the-wild/" target="_blank" rel="noopener">
+        <h3>Zelda: Breath of the Wild</h3>
+        <span class="tag adventure">Adventure</span>
+        <p>Link wakes up after a long sleep and sets out to defeat Calamity Ganon. You can explore a huge world freely and climb almost anything.</p>
+        <p><b>Released:</b> 2017<br><b>Platform:</b> Nintendo Switch<br><b>Cost:</b> Paid<br><b>Age rating:</b> Everyone 10+</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://www.rockstargames.com/reddeadredemption2" target="_blank" rel="noopener">
+        <h3>Red Dead Redemption 2</h3>
+        <span class="tag adventure">Action</span>
+        <p>A story-driven open-world game set in the American Wild West. You play as Arthur Morgan, a member of an outlaw gang.</p>
+        <p><b>Released:</b> 2018<br><b>Platform:</b> PC, console<br><b>Cost:</b> Paid<br><b>Age rating:</b> Mature 17+</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://www.thewitcher.com/en/witcher3" target="_blank" rel="noopener">
+        <h3>The Witcher 3</h3>
+        <span class="tag adventure">Action RPG</span>
+        <p>You play as Geralt, a monster hunter searching for his adopted daughter. It is praised for its story and its many side quests.</p>
+        <p><b>Released:</b> 2015<br><b>Platform:</b> PC, console<br><b>Cost:</b> Paid<br><b>Age rating:</b> Mature 17+</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://overwatch.blizzard.com" target="_blank" rel="noopener">
+        <h3>Overwatch 2</h3>
+        <span class="tag shooter">Hero shooter</span>
+        <p>A team shooter where two teams of five pick heroes with different roles such as tank, damage and support. Teamwork matters more than aim alone.</p>
+        <p><b>Released:</b> 2022<br><b>Platform:</b> PC, console<br><b>Cost:</b> Free<br><b>Age rating:</b> Teen</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://www.dota2.com" target="_blank" rel="noopener">
+        <h3>Dota 2</h3>
+        <span class="tag moba">MOBA</span>
+        <p>Two teams of five fight to destroy each other's base. It is deep and hard to learn, and its yearly world championship has very large prize pools.</p>
+        <p><b>Released:</b> 2013<br><b>Platform:</b> PC<br><b>Cost:</b> Free<br><b>Age rating:</b> Teen</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://supercell.com/en/games/clashofclans/" target="_blank" rel="noopener">
+        <h3>Clash of Clans</h3>
+        <span class="tag casual">Strategy</span>
+        <p>Build a village, train an army and attack other players to win loot. You can join a clan and fight clan wars with friends.</p>
+        <p><b>Released:</b> 2012<br><b>Platform:</b> Mobile<br><b>Cost:</b> Free<br><b>Age rating:</b> Everyone 10+</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://king.com/game/candycrushsaga" target="_blank" rel="noopener">
+        <h3>Candy Crush Saga</h3>
+        <span class="tag casual">Puzzle</span>
+        <p>Swap and match colourful candies to clear levels. The levels are short and easy to start, so it is popular for quick breaks.</p>
+        <p><b>Released:</b> 2012<br><b>Platform:</b> Mobile<br><b>Cost:</b> Free<br><b>Age rating:</b> Everyone</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://terraria.org" target="_blank" rel="noopener">
+        <h3>Terraria</h3>
+        <span class="tag sandbox">Sandbox</span>
+        <p>A 2D game where you dig, build and fight bosses. It is often described as a side-view Minecraft with more combat and items.</p>
+        <p><b>Released:</b> 2011<br><b>Platform:</b> PC, console, mobile<br><b>Cost:</b> Paid<br><b>Age rating:</b> Teen</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://www.smashbros.com/en_US/" target="_blank" rel="noopener">
+        <h3>Super Smash Bros. Ultimate</h3>
+        <span class="tag shooter">Fighting</span>
+        <p>Nintendo characters fight on a stage and try to knock each other off the screen. It has over 80 fighters and is great for playing with friends.</p>
+        <p><b>Released:</b> 2018<br><b>Platform:</b> Nintendo Switch<br><b>Cost:</b> Paid<br><b>Age rating:</b> Everyone 10+</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://www.cyberpunk.net" target="_blank" rel="noopener">
+        <h3>Cyberpunk 2077</h3>
+        <span class="tag adventure">Action RPG</span>
+        <p>An open-world game set in the futuristic Night City. You play a mercenary called V and choose how to complete missions.</p>
+        <p><b>Released:</b> 2020<br><b>Platform:</b> PC, console<br><b>Cost:</b> Paid<br><b>Age rating:</b> Mature 17+</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://www.playstation.com/games/god-of-war/" target="_blank" rel="noopener">
+        <h3>God of War</h3>
+        <span class="tag adventure">Action</span>
+        <p>Kratos and his son Atreus travel through the world of Norse myths. It is known for its story and its close-up combat.</p>
+        <p><b>Released:</b> 2018<br><b>Platform:</b> PlayStation, PC<br><b>Cost:</b> Paid<br><b>Age rating:</b> Mature 17+</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://www.fallguys.com" target="_blank" rel="noopener">
+        <h3>Fall Guys</h3>
+        <span class="tag casual">Party game</span>
+        <p>Dozens of players run through silly obstacle courses and the last ones standing win. It is bright, funny and easy to pick up.</p>
+        <p><b>Released:</b> 2020<br><b>Platform:</b> PC, console<br><b>Cost:</b> Free<br><b>Age rating:</b> Everyone 10+</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://www.hollowknight.com" target="_blank" rel="noopener">
+        <h3>Hollow Knight</h3>
+        <span class="tag adventure">Adventure</span>
+        <p>You explore a large underground insect kingdom, fight enemies and find secrets. It is hand-drawn and made by a small team.</p>
+        <p><b>Released:</b> 2017<br><b>Platform:</b> PC, console<br><b>Cost:</b> Paid<br><b>Age rating:</b> Everyone 10+</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+      <a class="card" href="https://forza.net/horizon" target="_blank" rel="noopener">
+        <h3>Forza Horizon 5</h3>
+        <span class="tag sports">Racing</span>
+        <p>A racing game set in an open-world version of Mexico. You can race hundreds of cars on roads, dirt tracks and in festivals.</p>
+        <p><b>Released:</b> 2021<br><b>Platform:</b> PC, Xbox, PlayStation<br><b>Cost:</b> Paid<br><b>Age rating:</b> Everyone</p>
+        <span class="visit">Visit game &rarr;</span>
+      </a>
+
+    </div>
+
+    <h2 id="compare">Compare the Games</h2>
+    <table>
+      <tr>
+        <th>Game</th>
+        <th>Genre</th>
+        <th>Platform</th>
+        <th>Cost</th>
+        <th>Age rating</th>
+      </tr>
+      <tr><td>Minecraft</td><td>Sandbox</td><td>PC, console, mobile</td><td>Paid</td><td>Everyone 10+</td></tr>
+      <tr><td>Roblox</td><td>Sandbox</td><td>PC, console, mobile</td><td>Free</td><td>Everyone 10+</td></tr>
+      <tr><td>Fortnite</td><td>Battle royale</td><td>PC, console</td><td>Free</td><td>Teen</td></tr>
+      <tr><td>Grand Theft Auto V</td><td>Action</td><td>PC, console</td><td>Paid</td><td>Mature 17+</td></tr>
+      <tr><td>Counter-Strike 2</td><td>Shooter</td><td>PC</td><td>Free</td><td>Mature 17+</td></tr>
+      <tr><td>Valorant</td><td>Shooter</td><td>PC, console</td><td>Free</td><td>Teen</td></tr>
+      <tr><td>League of Legends</td><td>MOBA</td><td>PC</td><td>Free</td><td>Teen</td></tr>
+      <tr><td>BGMI</td><td>Battle royale</td><td>Mobile</td><td>Free</td><td>Teen</td></tr>
+      <tr><td>Genshin Impact</td><td>Action RPG</td><td>PC, console, mobile</td><td>Free</td><td>Teen</td></tr>
+      <tr><td>Elden Ring</td><td>Action RPG</td><td>PC, console</td><td>Paid</td><td>Mature 17+</td></tr>
+      <tr><td>Apex Legends</td><td>Battle royale</td><td>PC, console</td><td>Free</td><td>Teen</td></tr>
+      <tr><td>Call of Duty: Mobile</td><td>Shooter</td><td>Mobile</td><td>Free</td><td>Mature 17+</td></tr>
+      <tr><td>Rocket League</td><td>Sports</td><td>PC, console</td><td>Free</td><td>Everyone</td></tr>
+      <tr><td>EA Sports FC</td><td>Sports</td><td>PC, console, mobile</td><td>Paid</td><td>Everyone</td></tr>
+      <tr><td>Mario Kart 8 Deluxe</td><td>Racing</td><td>Nintendo Switch</td><td>Paid</td><td>Everyone</td></tr>
+      <tr><td>Among Us</td><td>Party game</td><td>PC, console, mobile</td><td>Free on mobile, paid on PC</td><td>Everyone 10+</td></tr>
+      <tr><td>Pok&eacute;mon GO</td><td>Casual</td><td>Mobile</td><td>Free</td><td>Everyone</td></tr>
+      <tr><td>Subway Surfers</td><td>Casual</td><td>Mobile</td><td>Free</td><td>Everyone 10+</td></tr>
+      <tr><td>Stardew Valley</td><td>Simulation</td><td>PC, console, mobile</td><td>Paid</td><td>Everyone 10+</td></tr>
+      <tr><td>Zelda: Breath of the Wild</td><td>Adventure</td><td>Nintendo Switch</td><td>Paid</td><td>Everyone 10+</td></tr>
+      <tr><td>Red Dead Redemption 2</td><td>Action</td><td>PC, console</td><td>Paid</td><td>Mature 17+</td></tr>
+      <tr><td>The Witcher 3</td><td>Action RPG</td><td>PC, console</td><td>Paid</td><td>Mature 17+</td></tr>
+      <tr><td>Overwatch 2</td><td>Hero shooter</td><td>PC, console</td><td>Free</td><td>Teen</td></tr>
+      <tr><td>Dota 2</td><td>MOBA</td><td>PC</td><td>Free</td><td>Teen</td></tr>
+      <tr><td>Clash of Clans</td><td>Strategy</td><td>Mobile</td><td>Free</td><td>Everyone 10+</td></tr>
+      <tr><td>Candy Crush Saga</td><td>Puzzle</td><td>Mobile</td><td>Free</td><td>Everyone</td></tr>
+      <tr><td>Terraria</td><td>Sandbox</td><td>PC, console, mobile</td><td>Paid</td><td>Teen</td></tr>
+      <tr><td>Super Smash Bros. Ultimate</td><td>Fighting</td><td>Nintendo Switch</td><td>Paid</td><td>Everyone 10+</td></tr>
+      <tr><td>Cyberpunk 2077</td><td>Action RPG</td><td>PC, console</td><td>Paid</td><td>Mature 17+</td></tr>
+      <tr><td>God of War</td><td>Action</td><td>PlayStation, PC</td><td>Paid</td><td>Mature 17+</td></tr>
+      <tr><td>Fall Guys</td><td>Party game</td><td>PC, console</td><td>Free</td><td>Everyone 10+</td></tr>
+      <tr><td>Hollow Knight</td><td>Adventure</td><td>PC, console</td><td>Paid</td><td>Everyone 10+</td></tr>
+      <tr><td>Forza Horizon 5</td><td>Racing</td><td>PC, Xbox, PlayStation</td><td>Paid</td><td>Everyone</td></tr>
+    </table>
+
+    <h2 id="tips">Things to Check Before You Play</h2>
+    <ul>
+      <li><b>Platform:</b> Does the game work on your PC, console or phone?</li>
+      <li><b>Cost:</b> Is it free or paid? Free games may sell optional items inside the game.</li>
+      <li><b>Age rating:</b> Is the content suitable for your age?</li>
+      <li><b>Players:</b> Can you play alone, or do you need other people and internet?</li>
+      <li><b>Device power:</b> Will your device run it smoothly?</li>
+      <li><b>Time:</b> Do you have enough time to play it?</li>
+    </ul>
+
+  </main>
+
+  <footer>
+    <p>PlayIndex is a student project. Details can change and age ratings may differ by country.</p>
+  </footer>
+
+</body>
+</html>
